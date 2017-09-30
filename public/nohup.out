@@ -8,3 +8,7 @@
 [Sat Sep 30 14:54:05 2017] ::1:50472 [200]: /index.php
 [Sat Sep 30 14:54:16 2017] ::1:50476 Invalid request (Unexpected EOF)
 [Sat Sep 30 14:54:33 2017] ::1:50498 [200]: /favicon.ico
+[Sun Oct  1 00:23:22 2017] ::1:49657 [200]: /favicon.ico
+[Sun Oct  1 00:23:36 2017] PHP Fatal error:  Class 'thik\Controller' not found in /Users/xfd/Project/tp5/application/index/controller/Index.php on line 5
+[Sun Oct  1 00:23:36 2017] ::1:49659 [200]: /favicon.ico
+[Sun Oct  1 00:23:46 2017] ::1:49673 [200]: /favicon.ico

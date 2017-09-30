@@ -1,0 +1,2 @@
+[Sun Oct  1 00:19:43 2017] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Sun Oct  1 00:19:43 2017] PHP Fatal error:  Unknown: Failed opening required 'router.php' (include_path='.:') in Unknown on line 0
