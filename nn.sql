@@ -70,8 +70,50 @@ CREATE TABLE `o2o_bis` (
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
+# 商户账户表
+CREATE TABLE `o2o_bis_account` (
+	`id` int(11) unsigned NOT NULL auto_increment,
+	`user_name` CHAR(50) NOT NULL DEFAULT '',
+	`password` CHAR(32) NOT NULL DEFAULT '',
+	`code` VARCHAR(10) NOT NULL DEFAULT '',
+	`bis_id` INT(11) unsigned NOT NULL default 0,
+	`last_login_ip` VARCHAR(20) NOT NULL DEFAULT '',
+	`last_login_time` INT(10) unsigned NOT NULL DEFAULT 0,
+	`is_main` tinyint(1) unsigned NOT NULL DEFAULT 0,
+	`list_order` int(8) unsigned NOT NULL default 0,
+	`status` tinyint(1) NOT NULL default 0,
+	`create_time` int(11) unsigned NOT NULL default 0,
+	`update_time` int(11) unsigned NOT NULL default 0,
+	PRIMARY KEY (`id`),
+	KEY bis_id(`bis_id`)
+	KEY user_name(`user_name`)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
+# 商户门店表
+CREATE TABLE `o2o_bis_location` (
+	`id` int(11) unsigned NOT NULL auto_increment,
+	`name` CHAR(50) NOT NULL DEFAULT '',
+	`email` VARCHAR(50) NOT NULL DEFAULT '',
+	`logo` VARCHAR(255) NOT NULL DEFAULT '',
+	`license_logo` VARCHAR(255) NOT NULL DEFAULT '',
+	`description` text NOT NULL,
+	`city_id` int(11) unsigned NOT NULL default 0,
+	`city_path` VARCHAR(50) NOT NULL DEFAULT '',
+	`bank_info` VARCHAR(50) NOT NULL DEFAULT '',
+	`money` DECIMAL(20, 2) NOT NULL DEFAULT '0.00',
+	`bank_name` VARCHAR(50) NOT NULL DEFAULT '',
+	`bank_user` VARCHAR(50) NOT NULL DEFAULT '',
+	`faren` VARCHAR(20) NOT NULL DEFAULT '',
+	`faren_tel` VARCHAR(20) NOT NULL DEFAULT '',
+	`list_order` int(8) unsigned NOT NULL default 0,
+	`status` tinyint(1) NOT NULL default 0,
+	`create_time` int(11) unsigned NOT NULL default 0,
+	`update_time` int(11) unsigned NOT NULL default 0,
+	PRIMARY KEY (`id`),
+	KEY city_id(`city_id`)
+	KEY name(`name`)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 
