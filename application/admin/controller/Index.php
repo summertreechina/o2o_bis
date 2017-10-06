@@ -10,10 +10,11 @@ class Index extends Controller
 	}
 
 	public function test() {
-		echo '我亲爱的nn';
+		echo '我';
 	}
 
 	public function welcome() {
-		return $this->fetch();
+		// return $this->fetch();
+		return '欢迎来到慕课网';
 	}
 }
