@@ -88,7 +88,23 @@ class Category extends Controller
 		 } else {
 		 	$this->result($_SERVER['HTTP_REFERER'], 0, '失败');
 		 }
-		 
+	}
+
+	public function status($id, $status) {
+		// print($id.'-'.$status);
+		$data = input('get.');
+		$validate = validate('Category');
+		if (!$validate->scene('status')->check($data)) {
+			$this->error($validate->getError());
+		};
+		$res = $this->obj->save(['status'=>$data['status']], ['id'=>$data['id']]);
+		if ($res) {
+			$this->success('更新成功');
+		} else {
+			$this->error('更新失败，请检查');
+		}
+		
+
 	}
 
 
