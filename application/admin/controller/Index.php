@@ -15,6 +15,6 @@ class Index extends Controller
 
 	public function welcome() {
 		// return $this->fetch();
-		return '欢迎来到慕课网';
+		return '欢迎来到慕课网'.'<P>ThinkPHP-'.THINK_VERSION.'</P>';
 	}
 }

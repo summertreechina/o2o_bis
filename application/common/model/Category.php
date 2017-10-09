@@ -5,14 +5,15 @@ use think\Model;
 
 class Category extends Model {
 
-	protected $autoWriteTimestramp = true;
-
+	// protected $autoWriteTimestamp = true;
+// 
 	public function add($data) {
 		$data['status'] = 1;
-		// $data['create_time'] = time();
+		$data['create_time'] = time();
 		return $this->save($data);
 	}
 
+// 
 	public function getNormalFirstCategory() {
 		$data = [
 			'status' => 1,
@@ -24,6 +25,23 @@ class Category extends Model {
 		];
 
 		return $this->where($data)->order($order)->select();
+	}
+
+// 
+	public function getFirstCategorys($parent_id = 0) {
+		$data = [
+			'parent_id' => $parent_id,
+			'status' => ['neq', -1],
+		];
+
+		$order = [
+			'listorder' => 'desc',
+			'id' => 'desc',
+		];
+
+		$result = $this->where($data)->order($order)->paginate();
+
+		return $result;
 	}
 
 
