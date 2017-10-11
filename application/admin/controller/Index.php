@@ -5,7 +5,8 @@ use think\Controller;
 class Index extends Controller
 {
 	public function index() {
-		// echo '我亲爱的nn';
+		// echo 'nn';
+		\Map::getLngLat('山东青岛市南区金湖路16号');die();
 		return $this->fetch();
 	}
 
