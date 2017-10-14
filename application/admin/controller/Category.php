@@ -39,8 +39,8 @@ class Category extends Controller
 		if (!request()->isPost()) {
 			$this->error('非法请求');
 		}
-
 		$data = input('post.');
+		// \kint\Kint::d($data);die;
 		$validate = validate('Category');
 
 		if (!$validate->scene('add')->check($data)) {
@@ -91,7 +91,6 @@ class Category extends Controller
 	}
 
 	public function status($id, $status) {
-		// print($id.'-'.$status);
 		$data = input('get.');
 		$validate = validate('Category');
 		if (!$validate->scene('status')->check($data)) {
