@@ -12,6 +12,8 @@
 		`php think make:controller index/Test`
 			在项目根目录下
 			index/Test 模块/控制器
+		`php think make:model Common/City`
+		创建一个City的model模块
 
 	* 从终端创建文件夹、模块、控制器等
 		1、将项目根目录中的build文件cp到app文件夹中

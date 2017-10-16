@@ -55,6 +55,29 @@ function doCurl($url, $type=0, $data=[]) {
 	return $output;
 }
 
+//	超级打印 
+function P($var, $isDump = false, $break = true){
+	$print = $isDump ? 'var_dump' : 'print_r';
+	if (empty($var)) {
+		echo 'null';
+		if ($break) {
+			die;
+		}
+	} else if (is_array($var) || is_object($var)) {
+		echo '<pre style="color:#4CAF50">';
+		$print($var);
+		echo '</pre>';
+		if ($break) {
+			die;
+		}
+	} else {
+		var_dump($var);
+		if ($break) {
+			die;
+		}
+	}
+}
+
 
 
 
