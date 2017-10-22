@@ -78,6 +78,43 @@ function P($var, $isDump = false, $break = true){
 	}
 }
 
+// 商户入驻申请的文案
+// 晕的很，老师的函数名称很马虎 
+function bisRegister() {
+	switch ($status) {
+		case '1':
+			$str = '入驻申请成功';
+			break;
+		case '0':
+			$str = '审核通过后将以邮件的形式通知您，请关注您的邮件';
+			break;
+		case '2':
+			$str = '抱歉，您提交的材料审核未通过';
+			break;
+		default:
+			$str = '该审核材料已经被删除';
+			break;
+	}
+
+	return $str;
+}
+
+/**
+ * 通用的分页样式
+ * @param $obj
+ */
+function pagination($obj) {
+    if(!$obj) {
+        return '';
+    }
+    // 优化的方案
+    $params = request()->param();
+    return '<div class="cl pd-5 bg-1 bk-gray mt-20 tp5-o2o">'.$obj->appends($params)->render().'</div>';
+
+    // 在模版中的调用方式
+    // '{:pagination($bis)}'
+}
+
 
 
 

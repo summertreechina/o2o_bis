@@ -2,7 +2,7 @@
 {include file="common/header" /}
 <div class="cl pd-5 bg-1 bk-gray mt-20"> <h1>商户入驻申请</h1></div>
 <article class="page-container">
-	<form class="form form-horizontal"  method="post" action="{:url('register/add')}">
+	<form class="form form-horizontal"  method="post" action="{:url('Register/add')}">
 	基本信息：
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商户名称：</label>
@@ -175,15 +175,15 @@
  var SCOPE = {
 	'city_url' : "{:url('api/City/getCitysByParentId')}",
 	// 'category_url' : '',
-	// 'uploadify_swf' : '',
-	// 'image_upload' : '',
+	'uploadify_swf' : '__STATIC__/admin/uploadify/uploadify.swf',
+	'image_upload' : "{:url('api/Image/upload')}",
  };
 </script>
 <!--分配编辑器-->
 <script>
 $(function(){
 	var ue = UE.getEditor('editor');
-	var ue1 = UE.getEditor('editor1');
+// 	var ue1 = UE.getEditor('editor1');
 });
 </script>
 </body>
