@@ -13,6 +13,10 @@ class Bis extends Controller
 		$this->obj = model('Bis');
 	}
 
+	public function index() {
+		
+	}
+
 	public function apply() {
 		$this->obj->getBisByStatus();
 		return $this->fetch('apply');
